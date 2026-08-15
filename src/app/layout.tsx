@@ -5,21 +5,18 @@ import "./globals.css";
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
   display: "swap",
 });
 
