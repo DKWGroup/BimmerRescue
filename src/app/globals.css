@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #030712;
+    color: #f8fafc;
+    font-family: var(--font-sans), sans-serif;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Utilities for BMW UI */
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.carbon-pattern {
+  background-color: #05070a;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 0),
+    linear-gradient(45deg, rgba(0,0,0,0.9) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.9) 75%),
+    linear-gradient(45deg, rgba(0,0,0,0.9) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.9) 75%);
+  background-size: 20px 20px, 6px 6px, 6px 6px;
+  background-position: 0 0, 0 0, 3px 3px;
+}
+
+.glass-panel {
+  background: rgba(10, 15, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-m {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 25px rgba(0, 134, 191, 0.15);
+}
+
+/* M Performance Stripe Gradient */
+.m-stripe-bg {
+  background: linear-gradient(
+    90deg, 
+    #0086bf 0%, 
+    #0086bf 33.3%, 
+    #00205b 33.3%, 
+    #00205b 66.6%, 
+    #e0040b 66.6%, 
+    #e0040b 100%
+  );
+}
+
+.m-stripe-border {
+  border-image: linear-gradient(
+    90deg, 
+    #0086bf 0%, 
+    #00205b 50%, 
+    #e0040b 100%
+  ) 1;
+}
+
+/* Animations */
+@keyframes enginePulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 134, 191, 0.4), 0 0 40px rgba(0, 134, 191, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(224, 4, 11, 0.6), 0 0 60px rgba(224, 4, 11, 0.3);
+    transform: scale(1.03);
+  }
+}
+
+.animate-engine-pulse {
+  animation: enginePulse 3s infinite ease-in-out;
+}
+
+@keyframes hudScan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-hud-scan {
+  animation: hudScan 8s linear infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes revVibe {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-2px, 2px) rotate(-0.5deg); }
+  40% { transform: translate(2px, -1px) rotate(0.5deg); }
+  60% { transform: translate(-1px, -2px) rotate(-0.3deg); }
+  80% { transform: translate(1px, 2px) rotate(0.3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-rev-shake {
+  animation: revVibe 0.15s ease-in-out infinite;
+}
